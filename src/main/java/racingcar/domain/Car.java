@@ -14,7 +14,7 @@ public class Car {
         return this.position;
     }
     public void move(int number){
-        if(number > 4)
+        if(number >= 4)
             this.position++;
     }
 }

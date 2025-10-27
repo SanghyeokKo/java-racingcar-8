@@ -5,6 +5,8 @@ import racingcar.validator.CarNameValidator;
 import racingcar.validator.TrialCountValidator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,7 +22,11 @@ public class RacingController {
     private Cars setupCars(){
         String carNameInput = InputView.readCarNames();
         CarNameValidator.nameValidate(carNameInput);
-        List<String> carNames = Arrays.asList(carNameInput.split(","));
+        String[] splitNames = carNameInput.split(",");
+        List<String> carNames = new ArrayList<>();
+        for(String name : splitNames){
+            carNames.add(name.trim());
+        }
         return new Cars(carNames);
     }
     //시도 횟수 입력, 검증, 숫자로 변환

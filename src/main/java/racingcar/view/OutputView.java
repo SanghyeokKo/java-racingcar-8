@@ -14,6 +14,7 @@ public class OutputView {
             String positionString = PositionToString(car.getPosition());
             System.out.println(car.getName() + " : " + positionString);
         }
+        System.out.println();
     }
     private static String PositionToString(int position){
         return POSITION_MARK.repeat(position);

@@ -15,7 +15,7 @@ public class CarNameValidator {
             if(name == null || name.trim().isEmpty()){
                 throw new IllegalArgumentException("자동차 이름은 비어있거나 공백일 수 없습니다.");
             }
-            else if(name.length() > MAX_NAME_LENGTH){
+            else if(name.trim().length() > MAX_NAME_LENGTH){
                 throw new IllegalArgumentException("자동차 이름은 5자 이하만 가능합니다.");
             }
         }
